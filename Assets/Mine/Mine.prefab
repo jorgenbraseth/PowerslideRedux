@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceK: 15
-  explosionRadius: 25
+  explosionRadius: 4
+  explosionFx: {fileID: 8772976659159398146, guid: 5c36c179e52625044a7e876d61712d20,
+    type: 3}
 --- !u!114 &224570576703304190
 MonoBehaviour:
   m_ObjectHideFlags: 0

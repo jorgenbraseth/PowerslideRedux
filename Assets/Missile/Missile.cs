@@ -17,6 +17,7 @@ public class Missile : NetworkBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        Destroy(gameObject, 25);
     }
 
     private void OnDrawGizmosSelected()

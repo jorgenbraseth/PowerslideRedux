@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7171918169019670759}
   - component: {fileID: 1177983405297556191}
   - component: {fileID: 3202215340950634745}
+  - component: {fileID: 403220241557356712}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Car
@@ -42,6 +43,7 @@ Transform:
   - {fileID: 1521710036648651244}
   - {fileID: 1521710037470977156}
   - {fileID: 1521710037267926083}
+  - {fileID: 8856008124149572996}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,7 +99,7 @@ MonoBehaviour:
     motor: 1
     steering: 0
   maxMotorTorque: 3000
-  maxSteeringAngle: 40
+  maxSteeringAngle: 60
 --- !u!114 &1521710035533101887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +210,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materialIndex: 1
   randomizedRenderer: {fileID: 1521710035575471672}
+--- !u!114 &403220241557356712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521710035533101856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93eaaa7a1df684c4a8c342925d897785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  com: {fileID: 8856008124149572996}
 --- !u!1 &1521710035583100963
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +264,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1521710035858989177}
   - component: {fileID: 1521710035858989176}
+  - component: {fileID: 7520995783731932729}
+  - component: {fileID: 1995370855388730199}
   m_Layer: 0
   m_Name: Spot Light (1)
   m_TagString: Untagged
@@ -281,7 +298,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 47.746483
   m_Range: 30
   m_SpotAngle: 48.4
   m_CookieSize: 10
@@ -301,13 +318,107 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
+  m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &7520995783731932729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521710035858989182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  m_Version: 3
+  directionalIntensity: 3.1415927
+  punctualIntensity: 600
+  areaIntensity: 200
+  enableSpotReflector: 0
+  luxAtDistance: 1
+  m_InnerSpotPercent: 0
+  lightDimmer: 1
+  m_VolumetricDimmer: 1
+  lightUnit: 0
+  sunDiskSize: 1
+  sunHaloSize: 0.1
+  fadeDistance: 10000
+  affectDiffuse: 1
+  affectSpecular: 1
+  nonLightmappedOnly: 0
+  lightTypeExtent: 0
+  spotLightShape: 0
+  shapeWidth: 0.5
+  shapeHeight: 0.5
+  aspectRatio: 1
+  shapeRadius: 0
+  maxSmoothness: 0.99
+  applyRangeAttenuation: 1
+  useOldInspector: 0
+  useVolumetric: 1
+  featuresFoldout: 1
+  showAdditionalSettings: 0
+  displayLightIntensity: 600
+  displayAreaLightEmissiveMesh: 0
+  lightLayers: 1
+  shadowNearPlane: 0.1
+  shadowSoftness: 0.5
+  blockerSampleCount: 24
+  filterSampleCount: 16
+  minFilterSize: 0.00001
+--- !u!114 &1995370855388730199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521710035858989182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  shadowResolution: 512
+  shadowDimmer: 1
+  volumetricShadowDimmer: 1
+  shadowFadeDistance: 10000
+  contactShadows: 0
+  viewBiasMin: 0.2
+  viewBiasMax: 100
+  viewBiasScale: 1
+  normalBiasMin: 0.5
+  normalBiasMax: 0.5
+  normalBiasScale: 1
+  sampleBiasScale: 0
+  edgeLeakFixup: 1
+  edgeToleranceNormal: 1
+  edgeTolerance: 1
+  shadowCascadeCount: 4
+  shadowCascadeRatios:
+  - 0.05
+  - 0.2
+  - 0.3
+  shadowCascadeBorders:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  shadowAlgorithm: 0
+  shadowVariant: 0
+  shadowPrecision: 0
+  shadowData:
+    format: 0
+    data: 
+  shadowDatas: []
 --- !u!1 &1521710035918019267
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,25 +527,25 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 15000
+    damper: 15000
     targetPosition: 0
-  m_SuspensionDistance: 0.48
+  m_SuspensionDistance: 0.55
   m_ForceAppPointDistance: 0.7
   m_Mass: 20
   m_WheelDampingRate: 0.22
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 0.3
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 4
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 0.6
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &1521710036648651246
 MonoBehaviour:
@@ -493,25 +604,25 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 15000
+    damper: 15000
     targetPosition: 0
-  m_SuspensionDistance: 0.48
+  m_SuspensionDistance: 0.55
   m_ForceAppPointDistance: 0.7
   m_Mass: 20
   m_WheelDampingRate: 0.22
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 0.3
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 4
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 0.6
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &1521710037010325501
 MonoBehaviour:
@@ -536,6 +647,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1521710037112271135}
   - component: {fileID: 1521710037112271134}
+  - component: {fileID: 7167311446069714331}
+  - component: {fileID: 351336527126785394}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -568,7 +681,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 47.746483
   m_Range: 30
   m_SpotAngle: 48.4
   m_CookieSize: 10
@@ -588,13 +701,107 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
+  m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &7167311446069714331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521710037112271132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  m_Version: 3
+  directionalIntensity: 3.1415927
+  punctualIntensity: 600
+  areaIntensity: 200
+  enableSpotReflector: 0
+  luxAtDistance: 1
+  m_InnerSpotPercent: 0
+  lightDimmer: 1
+  m_VolumetricDimmer: 1
+  lightUnit: 0
+  sunDiskSize: 1
+  sunHaloSize: 0.1
+  fadeDistance: 10000
+  affectDiffuse: 1
+  affectSpecular: 1
+  nonLightmappedOnly: 0
+  lightTypeExtent: 0
+  spotLightShape: 0
+  shapeWidth: 0.5
+  shapeHeight: 0.5
+  aspectRatio: 1
+  shapeRadius: 0
+  maxSmoothness: 0.99
+  applyRangeAttenuation: 1
+  useOldInspector: 0
+  useVolumetric: 1
+  featuresFoldout: 1
+  showAdditionalSettings: 0
+  displayLightIntensity: 600
+  displayAreaLightEmissiveMesh: 0
+  lightLayers: 1
+  shadowNearPlane: 0.1
+  shadowSoftness: 0.5
+  blockerSampleCount: 24
+  filterSampleCount: 16
+  minFilterSize: 0.00001
+--- !u!114 &351336527126785394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521710037112271132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  shadowResolution: 512
+  shadowDimmer: 1
+  volumetricShadowDimmer: 1
+  shadowFadeDistance: 10000
+  contactShadows: 0
+  viewBiasMin: 0.2
+  viewBiasMax: 100
+  viewBiasScale: 1
+  normalBiasMin: 0.5
+  normalBiasMax: 0.5
+  normalBiasScale: 1
+  sampleBiasScale: 0
+  edgeLeakFixup: 1
+  edgeToleranceNormal: 1
+  edgeTolerance: 1
+  shadowCascadeCount: 4
+  shadowCascadeRatios:
+  - 0.05
+  - 0.2
+  - 0.3
+  shadowCascadeBorders:
+  - 0.2
+  - 0.2
+  - 0.2
+  - 0.2
+  shadowAlgorithm: 0
+  shadowVariant: 0
+  shadowPrecision: 0
+  shadowData:
+    format: 0
+    data: 
+  shadowDatas: []
 --- !u!1 &1521710037267926080
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,25 +876,25 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 15000
+    damper: 15000
     targetPosition: 0
-  m_SuspensionDistance: 0.48
+  m_SuspensionDistance: 0.55
   m_ForceAppPointDistance: 0.7
   m_Mass: 20
   m_WheelDampingRate: 0.22
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 0.3
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 4
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 0.6
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &1521710037401977379
 MonoBehaviour:
@@ -746,25 +953,25 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
+    spring: 15000
+    damper: 15000
     targetPosition: 0
-  m_SuspensionDistance: 0.48
+  m_SuspensionDistance: 0.55
   m_ForceAppPointDistance: 0.7
   m_Mass: 20
   m_WheelDampingRate: 0.22
   m_ForwardFriction:
     m_ExtremumSlip: 1
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 0.3
   m_SidewaysFriction:
-    m_ExtremumSlip: 2
-    m_ExtremumValue: 4
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 0.6
+    m_ExtremumSlip: 1
+    m_ExtremumValue: 3
+    m_AsymptoteSlip: 2
+    m_AsymptoteValue: 3
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &1521710037470977158
 MonoBehaviour:
@@ -779,6 +986,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerationSmoke: {fileID: 1521710036258719680}
+--- !u!1 &6891460423718358065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8856008124149572996}
+  m_Layer: 0
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8856008124149572996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891460423718358065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.15, z: -0.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1521710035533101859}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1521710035577366104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1049,6 +1286,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WheelSmoke
       objectReference: {fileID: 0}
+    - target: {fileID: 4358742600864446243, guid: b7f5a98a2f108714394416aa7c0145f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4358742600864446242, guid: b7f5a98a2f108714394416aa7c0145f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1140,6 +1382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WheelSmoke
       objectReference: {fileID: 0}
+    - target: {fileID: 4358742600864446243, guid: b7f5a98a2f108714394416aa7c0145f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4358742600864446242, guid: b7f5a98a2f108714394416aa7c0145f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1207,15 +1454,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f5a98a2f108714394416aa7c0145f4, type: 3}
---- !u!4 &2982348849208737274 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4358742600864446242, guid: b7f5a98a2f108714394416aa7c0145f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1521710037268073176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &2982348849208737276 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4358742600864446244, guid: b7f5a98a2f108714394416aa7c0145f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1521710037268073176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2982348849208737274 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4358742600864446242, guid: b7f5a98a2f108714394416aa7c0145f4,
     type: 3}
   m_PrefabInstance: {fileID: 1521710037268073176}
   m_PrefabAsset: {fileID: 0}
@@ -1293,6 +1540,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WheelSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358742600864446243, guid: b7f5a98a2f108714394416aa7c0145f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4358742600864446242, guid: b7f5a98a2f108714394416aa7c0145f4,
         type: 3}
@@ -1384,6 +1636,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WheelSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358742600864446243, guid: b7f5a98a2f108714394416aa7c0145f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4358742600864446242, guid: b7f5a98a2f108714394416aa7c0145f4,
         type: 3}
