@@ -11,11 +11,18 @@ public class AxleInfo {
     public bool steering;
 }
      
+[RequireComponent(typeof(EngineSound))]
 public class SimpleCarController : NetworkBehaviour {
     public List<AxleInfo> axleInfos; 
     public float maxMotorTorque;
     public float maxSteeringAngle;
-     
+    private EngineSound engineSound;
+
+    private void Start()
+    {
+        engineSound = GetComponent<EngineSound>();
+    }
+
     // finds the corresponding visual wheel
     // correctly applies the transform
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
@@ -45,7 +52,9 @@ public class SimpleCarController : NetworkBehaviour {
         
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-     
+
+        engineSound.engineLevel = Input.GetAxis("Vertical");          
+        
         foreach (AxleInfo axleInfo in axleInfos) {
             if (axleInfo.steering) {
                 axleInfo.leftWheel.steerAngle = steering;
@@ -54,6 +63,8 @@ public class SimpleCarController : NetworkBehaviour {
             if (axleInfo.motor) {
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
+
+                engineSound.rpm = axleInfo.leftWheel.rpm;
             }
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
